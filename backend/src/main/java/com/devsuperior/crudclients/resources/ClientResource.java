@@ -60,13 +60,13 @@ public class ClientResource {
 		return ResponseEntity.created(uri).build();
 	}
 	
-	@PutMapping
+	@PutMapping(value = "/{id}")
 	public ResponseEntity<Void> update(@PathVariable Long id, @RequestBody ClientDTO clientDTO) {
 		this.clientService.update(id, clientDTO);
 		return ResponseEntity.ok().build();
 	}
 	
-	@DeleteMapping
+	@DeleteMapping(value = "/{id}")
 	public ResponseEntity<Void> delete(@PathVariable Long id) {
 		this.clientService.delete(id);
 		return ResponseEntity.noContent().build();
